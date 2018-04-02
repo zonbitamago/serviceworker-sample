@@ -27,7 +27,7 @@ module.exports = {
       }
     ],
     plugins: [
-      new workboxPlugin({
+      workboxPlugin.InjectManifest({
         globDirectory: dist,
         globPatterns: ["**/*.{html,js}"],
         swDest: dist + "/sw.js"
