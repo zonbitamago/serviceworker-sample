@@ -25,13 +25,11 @@ module.exports = {
           }
         }
       }
-    ],
-    plugins: [
-      workboxPlugin.InjectManifest({
-        globDirectory: dist,
-        globPatterns: ["**/*.{html,js}"],
-        swDest: dist + "/sw.js"
-      })
     ]
-  }
+  },
+  plugins: [
+    new workboxPlugin.InjectManifest({
+      swSrc: "./src/sw.js"
+    })
+  ]
 };
