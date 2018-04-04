@@ -7,10 +7,10 @@ module.exports = {
   entry: {
     app: "./src/sw.js"
   },
-  output: {
-    filename: "./src/[name].bundle.js",
-    path: path.resolve(".")
-  },
+  // output: {
+  //   filename: "./src/[name].bundle.js",
+  //   path: path.resolve(".")
+  // },
   target: "web",
   module: {
     rules: [

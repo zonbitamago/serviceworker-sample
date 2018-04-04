@@ -79,7 +79,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log(\"test\");\n\n//# sourceURL=webpack:///./src/sw.js?");
+eval("\n\nconsole.log(\"test\");\nconsole.log(\"test2\");\n\n//# sourceURL=webpack:///./src/sw.js?");
 
 /***/ })
 
