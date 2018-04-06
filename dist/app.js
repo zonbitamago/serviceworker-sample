@@ -79,7 +79,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log(\"test\");\n\n//# sourceURL=webpack:///./src/sw.js?");
+eval("\n\nimportScripts(\"https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js\");\n\nif (workbox) {\n  console.log(\"Yay! Workbox is loaded \\uD83C\\uDF89\");\n} else {\n  console.log(\"Boo! Workbox didn't load \\uD83D\\uDE2C\");\n}\n\n//# sourceURL=webpack:///./src/sw.js?");
 
 /***/ })
 

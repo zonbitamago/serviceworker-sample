@@ -1,0 +1,10 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: ./nginx
+    image: webpack_nginx
+    ports:
+      - "80:8080"
+    volumes:
+      - ./dist:/wwwroot:ro
