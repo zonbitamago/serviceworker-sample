@@ -79,7 +79,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nimportScripts(\"https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js\");\n\nif (workbox) {\n  console.log(\"Yay! Workbox is loaded \\uD83C\\uDF89\");\n  workbox.routing.registerRoute(new RegExp(\".*.js\"), workbox.strategies.networkFirst());\n} else {\n  console.log(\"Boo! Workbox didn't load \\uD83D\\uDE2C\");\n}\n\n//# sourceURL=webpack:///./src/sw.js?");
+eval("\n\nimportScripts(\"https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js\");\n\nif (workbox) {\n  console.log(\"Yay! Workbox is loaded \\uD83C\\uDF89\");\n  workbox.routing.registerRoute(new RegExp(\".*.js\"), workbox.strategies.networkFirst());\n\n  workbox.routing.registerRoute(\n  // Cache CSS files\n  /.*\\.css/,\n  // Use cache but update in the background ASAP\n  workbox.strategies.staleWhileRevalidate({\n    // Use a custom cache name\n    cacheName: \"css-cache\"\n  }));\n\n  workbox.routing.registerRoute(\n  // Cache image files\n  /.*\\.(?:png|jpg|jpeg|svg|gif)/,\n  // Use the cache if it's available\n  workbox.strategies.cacheFirst({\n    // Use a custom cache name\n    cacheName: \"image-cache\",\n    plugins: [new workbox.expiration.Plugin({\n      // Cache only 20 images\n      maxEntries: 20,\n      // Cache for a maximum of a week\n      maxAgeSeconds: 7 * 24 * 60 * 60\n    })]\n  }));\n} else {\n  console.log(\"Boo! Workbox didn't load \\uD83D\\uDE2C\");\n}\n\n//# sourceURL=webpack:///./src/sw.js?");
 
 /***/ })
 
