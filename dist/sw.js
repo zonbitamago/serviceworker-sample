@@ -1,4 +1,4 @@
-importScripts("precache-manifest.bdece0554324ce6bf7a3e47f4773c685.js", "https://storage.googleapis.com/workbox-cdn/releases/3.0.1/workbox-sw.js");
+importScripts("precache-manifest.4be8b3e28c2369925712a11c52e8f19f.js", "https://storage.googleapis.com/workbox-cdn/releases/3.0.1/workbox-sw.js");
 
 importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js"
@@ -38,6 +38,7 @@ if (workbox) {
       ]
     })
   );
+  workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
