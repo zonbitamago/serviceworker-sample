@@ -5,12 +5,12 @@ const dist = __dirname + "/dist";
 
 module.exports = {
   entry: {
-    app: "./src/sw.js"
+    app: "./src/app.js",
+    sw: "./src/sw.js"
   },
-  // output: {
-  //   filename: "./src/[name].bundle.js",
-  //   path: path.resolve(".")
-  // },
+  output: {
+    filename: "./[name].bundle.js"
+  },
   target: "web",
   module: {
     rules: [
@@ -26,10 +26,10 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: [
-    new workboxPlugin.InjectManifest({
-      swSrc: "./src/sw.js"
-    })
-  ]
+  }
+  // plugins: [
+  //   new workboxPlugin.InjectManifest({
+  //     swSrc: "./src/sw.js"
+  //   })
+  // ]
 };

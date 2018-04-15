@@ -5,19 +5,11 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<script>
-// Check that service workers are registered
-if ("serviceWorker" in navigator) {
-  // Use the window load event to keep the page load performant
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/app.js");
-  });
-}
-</script>
 </head>
 
 <body>
   <h2>serviceworker-sample</h2>
+  <script src="app.bundle.js"></script>
 </body>
 
 </html>
